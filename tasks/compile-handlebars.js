@@ -61,7 +61,7 @@ module.exports = function(grunt) {
    * and if so, returns the unglobbed
    * version of the filename       */
   var isGlob = function(filename) {
-    if (!filename) return;
+    if (!filename || !filename.match) return;
     var match = filename.match(/[^\*]*/);
     if (match[0] !== filename) {
       return match.pop();
